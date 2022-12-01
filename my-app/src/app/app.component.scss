@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(242, 240, 240);
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.container:hover {
+    border: 1px solid gray;
+}
+h1 {
+    font-size: 50px;
+    color: gray;
+}
+
+input {
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+input:hover {
+    border: 2px solid black;
+}
+
+p {
+    font-size: 15px;
+    font-style: italic;
+    color: red;
+}
+.education {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px rgb(177, 174, 174) solid;
+}
+.selectEducation {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px rgb(177, 174, 174) solid;
+}
+.select-education {
+    display: flex;
+    justify-content: space-between;
+}
+.title {
+    font-size: 18px;
+    font-style: italic;
+    color: gray;
+}
+
+button {
+    width: 100px;
+    height: 45px;
+    margin-top: 50px;
+    margin: auto;
+    border-radius: 10px;
+}

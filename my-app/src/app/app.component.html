@@ -1,0 +1,79 @@
+<div class="container">
+    <h1>CV</h1>
+    <div [formGroup]="form">
+        <p class="title">Firstname</p>
+        <input type="text" formControlName="firstname">
+        <div *ngIf="form.get('firstname')?.invalid && form.get('firstname')?.touched">
+            <p> * Firstname is required</p>
+        </div>
+        <p class="title">Lastname</p>
+        <input type="text" formControlName="lastname">
+        <div *ngIf="form.get('lastname')?.invalid && form.get('lastname')?.touched">
+            <p> * Lastname is required</p>
+        </div>
+        <p class="title">Email</p>
+        <div formGroupName="userContactInfo">
+          <input type="text"formControlName="email">
+            <div *ngIf="form.get('userContactInfo.email')?.getError('required') && form.get('userContactInfo.email')?.touched">
+              <p> * Email is required</p>
+            </div>
+            <div *ngIf="form.get('userContactInfo.email')?.getError('email') && form.get('userContactInfo.email')?.touched">
+              <p> * Email format is invalid</p>
+            </div>
+          </div>
+          <p class="title">Phone</p>
+          <div formGroupName="userContactInfo">
+            <input type="text" formControlName="phone">
+            <div *ngIf="form.get('userContactInfo.phone')?.getError('required') && form.get('userContactInfo.phone')?.touched">
+              <p> * Phone is required</p>
+            </div>
+            <div *ngIf="form.get('userContactInfo.phone')?.getError('minlength') && form.get('userContactInfo.phone')?.touched">
+                <p> * Phone is invalid</p>
+            </div>
+            <div *ngIf="form.get('userContactInfo.phone')?.getError('maxlength') && form.get('userContactInfo.phone')?.touched">
+                <p> * Phone is invalid</p>
+            </div>
+            <div *ngIf="form.get('userContactInfo.phone')?.getError('pattern') && form.get('userContactInfo.phone')?.touched">
+              <p> * Phone is invalid</p>
+            </div>
+          </div>
+          <p class="title">LinkedIn</p>
+        <div formGroupName="userContactInfo">
+          <input type="text"formControlName="userResources">
+            <div *ngIf="form.get('userContactInfo.userResources')?.getError('required') && form.get('userContactInfo.userResources')?.touched">
+                <p> * Please enter your LinkedIn address...</p>
+          </div>
+          <div *ngIf="form.get('userContactInfo.userResources')?.getError('pattern') && form.get('userContactInfo.userResources')?.touched">
+            <p> * Invalid address...</p>
+          </div>
+        </div>
+        <p class="title">Education</p>
+        <div class="select-education">
+          <select class="education">
+            <option value="1" >Information technologies</option>
+            <option value="2">design</option>
+            <option value="3">Tourism</option>
+            <option value="3">Other</option>
+          </select>
+          <select class="selectEducation">
+            <option value="1">bachelor</option>
+            <option value="2" selected="selected">magister</option>
+            <option value="3">Expert</option>
+            <option value="3">Other</option>
+          </select>
+      </div>
+      <p class="title">Experience</p>
+      <div formGroupName="userContactInfo">
+        <input type="text"formControlName="experience">
+          <div *ngIf="form.get('userContactInfo.experience')?.getError('required') && form.get('userContactInfo.experience')?.touched">
+              <p> * Please enter your Experience...</p>
+        </div>
+      
+      </div>
+      
+        <div class="footer">
+            <button type="submit" [disabled]="form.invalid">Submit</button>
+            <button (click)="form.reset()">Delete</button>
+        </div>
+               
+    </div>
